@@ -1,0 +1,68 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Update";
+    //var Departments = new SelectList(ViewBag.Departments, "Id", "Name");
+}
+
+
+
+<form asp-action="Update" asp-controller="Employee" enctype="multipart/form-data">
+   @* @{
+        var Departments = new SelectList(ViewBag.Departments, "Id", "Name");
+    }*@
+
+    <div class="from-group">
+        <label asp-for="@Model.Name" class="col-form-label"> </label>
+        <input asp-for="@Model.Name" class="form-control" />
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+    <div class="from-group">
+        <label asp-for="@Model.salary" class="col-form-label"> </label>
+        <input asp-for="@Model.salary" class="form-control" />
+        <span asp-validation-for="@Model.salary" class="text-danger"></span>
+
+    </div>
+    <div class="from-group">
+        <label asp-for="@Model.Address" class="col-form-label"> </label>
+        <input asp-for="@Model.Address" class="form-control" />
+        <span asp-validation-for="@Model.Address" class="text-danger"></span>
+
+    </div>
+    <div class="from-group">
+        <label asp-for="@Model.HireDate" class="col-form-label"> </label>
+        <input asp-for="@Model.HireDate" class="form-control" />
+        <span asp-validation-for="@Model.HireDate" class="text-danger"></span>
+
+    </div>
+    <div class="from-group">
+        <label asp-for="@Model.Email" class="col-form-label"> </label>
+        <input asp-for="@Model.Email" class="form-control" />
+        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+
+    </div>
+
+    <input type="submit" value="Update" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-light">Back to List</a>
+
+   @* <div class="from-group">
+        <label asp-for="@Model.DepartmentId" class="col-form-label"> </label>
+        <select asp-for="@Model.DepartmentId" asp-items="Departments" class="form-control">
+            <option> -----Select Department-------</option>
+        </select>
+        <span asp-validation-for="@Model.DepartmentId" class="text-danger"></span>
+
+    </div>
+*@
+    
+@*    <partial name="PartialViews/CreateUpdatePartialView" />
+*@    
+    @section Scripts {
+      
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+
+   
+
+</form>
